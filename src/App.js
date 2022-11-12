@@ -7,6 +7,8 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Error from './pages/Error';
 import NotFound from './pages/NotFound';
+import Profile from './pages/Profile'
+import ExperienceCreate from './pages/ExperienceCreate';
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile/>} />
+        {/* <Route path="/experience/experienceCreate" element={<ExperienceCreate/>} />
+        <Route path="/experience/:experienceId" element={<ExperienceDetail/>}/> */}
 
         //páginas de errores
         <Route path="/error" element={<Error/>} />
