@@ -7,8 +7,12 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Error from './pages/Error';
 import NotFound from './pages/NotFound';
+<<<<<<< HEAD
 import Profile from './pages/Profile'
 import ExperienceCreate from './pages/ExperienceCreate';
+=======
+import Profile from './pages/Profile';
+>>>>>>> 1467a2e64834f649d13d6b2253652be8203a4383
 
 function App() {
   return (
@@ -20,9 +24,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+<<<<<<< HEAD
         <Route path="/profile" element={<Profile/>} />
         {/* <Route path="/experience/experienceCreate" element={<ExperienceCreate/>} />
         <Route path="/experience/:experienceId" element={<ExperienceDetail/>}/> */}
+=======
+        <Route path="/profile" element={<Profile />} />
+
+>>>>>>> 1467a2e64834f649d13d6b2253652be8203a4383
 
         //páginas de errores
         <Route path="/error" element={<Error/>} />
