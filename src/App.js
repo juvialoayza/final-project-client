@@ -7,12 +7,8 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Error from './pages/Error';
 import NotFound from './pages/NotFound';
-<<<<<<< HEAD
 import Profile from './pages/Profile'
 import ExperienceCreate from './pages/ExperienceCreate';
-=======
-import Profile from './pages/Profile';
->>>>>>> 1467a2e64834f649d13d6b2253652be8203a4383
 
 function App() {
   return (
