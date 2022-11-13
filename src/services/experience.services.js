@@ -4,6 +4,12 @@ const createExperienceService = (newExperience) => {
   return service.post("/experiences/experienceCreate", newExperience)
 }
 
+const experienceListService = () => {
+  return service.get("/experiences")
+}
+
+
 export {
-    createExperienceService
+    createExperienceService,
+    experienceListService
 }
