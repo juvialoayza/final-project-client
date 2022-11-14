@@ -45,7 +45,7 @@ function Profile() {
 
   return (
     <div>
-      <h3>👋 Hola {details} </h3>
+      <h3>👋 Hola {details.firstName} </h3>
       <p>firstName: {details.firstName}</p>
 
 

@@ -6,8 +6,8 @@ const createExperienceService = (newExperience) => {
 }
 
 const experienceListService = () => {
-  const {name} = useParams()
-  return service.get(`/experiences/${name}`)
+  // const {name} = useParams()
+  return service.get("/experiences")
 }
 
 
