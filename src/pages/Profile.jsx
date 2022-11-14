@@ -18,6 +18,7 @@ function Profile() {
   const getData = async () => {
     try {
       const response = await getProfileDetailsService()
+      // console.log(response.data)
       setDetails(response.data)
       setIsFetching(false)
     } catch (error) {
@@ -44,7 +45,7 @@ function Profile() {
 
   return (
     <div>
-      <h3>👋 Hola {details.firstName} </h3>
+      <h3>👋 Hola {details} </h3>
       <p>firstName: {details.firstName}</p>
 
 

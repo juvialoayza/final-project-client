@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Navbar from "../components/Navbar"
 import {experienceListService} from "../services/experience.services"
 
@@ -25,7 +25,7 @@ function ExperienceList() {
       setIsFetching(false)
 
     } catch(error) {
-        next(error)
+        console.log(error)
     }
   }
 

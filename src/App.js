@@ -22,16 +22,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-<<<<<<< HEAD
         <Route path="/profile" element={<Profile/>} />
         <Route path="/experience/experienceCreate" element={<ExperienceCreate/>} />
         <Route path="/experiences" element={<ExperienceList/>}/>
         <Route path="/experiences/:experienceId" element={<ExperienceDetail/>}/>
-=======
-        <Route path="/profile" element={<isPrivate><Profile/></isPrivate>} />
-        {/* <Route path="/experience/experienceCreate" element={<ExperienceCreate/>} />
-        <Route path="/experience/:experienceId" element={<ExperienceDetail/>}/> */}
->>>>>>> 80815b92e4e156229c39ce0c969e86608d9a5d68
 
         //páginas de errores
         <Route path="/error" element={<Error/>} />
