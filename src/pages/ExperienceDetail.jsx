@@ -7,14 +7,16 @@ import {experienceDetailsService} from "../services/experience.services"
 function ExperienceDetail() {
   const [experienceInfo, setExperienceInfo] = useState(null)
   const [isFetching, setIsFetching] = useState(true)
+  // console.log(experienceInfo)
+  const {experienceId} = useParams()
 
-  const [experienceId] = useParams()
   useEffect(() => {
     getInfoExperience()
-  },[])
+  }, [experienceId])
+
   const getInfoExperience = async () => {
     try {
-      const response = await experienceDetailsService()
+      const response = await experienceDetailsService(experienceId)
       console.log(response)
       setExperienceInfo(response.data)
       setIsFetching(false)
@@ -30,11 +32,14 @@ function ExperienceDetail() {
   
   return (
     <div>
-        {experienceInfo.map((eachExperience) => {
-         return(
-          <p>{eachExperience.name}</p>
-         )
-        })}
+       
+         <h2>Details</h2>
+          <p>{experienceInfo.name}</p>
+          <p>{experienceInfo.description}</p>
+          <p>{experienceInfo.price}</p>
+          <p>{experienceInfo.duration}</p>
+          <p>{experienceInfo.creator[0].firstName} {experienceInfo.creator[0].lastName}</p>
+       
     </div>
   )
 }
