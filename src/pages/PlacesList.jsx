@@ -1,4 +1,5 @@
 import React from 'react'
+import {placesListService} from "../services/experience.services"
 
 function PlacesList() {
 
@@ -28,8 +29,11 @@ function PlacesList() {
   }
     
   return (
-    <div>PlacesList</div>
+
+    <div>{response.data}</div>
   )
 }
+
+
 
 export default PlacesList

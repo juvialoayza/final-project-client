@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams, Link } from "react-router-dom"
-import { deleteProfileService, getProfileDetailsService } from "../services/profile.services"
+import { deleteProfileService, getProfileDetailsService, updateProfileService } from "../services/profile.services"
 
 function Profile() {
 
@@ -16,14 +16,6 @@ function Profile() {
   const [passwordInput, setPasswordInput] = useState("")
   const [bioCreatorInput, setBioCreatorInput] = useState("")
 
-  const handleFirstNameChange = (event) => setFirstNameInput(event.target.value)
-  const handleLastNameChange = (event) => setLastNameInput(event.target.value)
-  const handleEmailChange = (event) => setEmailInput(event.target.value)
-  const handlePasswordChange = (event) => setPasswordInput(event.target.value)
-  const handleBioCreatorChange = (event) => setBioCreatorInput(event.target.value)
-
-
-
   useEffect(() => {
     getData()
   }, [])
@@ -33,12 +25,45 @@ function Profile() {
       const response = await getProfileDetailsService()
       // console.log(response.data)
       setDetails(response.data)
+      setFirstNameInput(response.data.firstName)
+      setLastNameInput(response.data.lastNameInput)
+      setEmailInput(response.data.email)
+      setPasswordInput(response.data.password)
+      setBioCreatorInput(response.data.bioCreator)
       setIsFetching(false)
     } catch (error) {
-      console.log(error)
       navigate("/error")
     }
   }
+
+  const handleFirstNameChange = (event) => setFirstNameInput(event.target.value)
+  const handleLastNameChange = (event) => setLastNameInput(event.target.value)
+  const handleEmailChange = (event) => setEmailInput(event.target.value)
+  const handlePasswordChange = (event) => setPasswordInput(event.target.value)
+  const handleBioCreatorChange = (event) => setBioCreatorInput(event.target.value)
+
+  const handleUpdate = async (event) => {
+
+  event.preventDefault()
+  try {
+    const updatedProfile = {
+      firstName: firstNameInput, 
+      lastName: lastNameInput,
+      email: emailInput,
+      password: passwordInput,
+      bioCreator: bioCreatorInput
+    }
+
+  await updateProfileService(userId, updatedProfile)
+  
+  navigate("/profile")
+
+  }catch(error) {
+    navigate("/error")
+  }
+
+  }
+
 
   if (isFetching === true) {
     return <h3>...searching</h3>
@@ -71,7 +96,7 @@ function Profile() {
       <input type="email" name="email" value={emailInput} onChange={handleEmailChange}></input>
       <br />
       <label htmlFor="password">Password:</label>
-      <input type="text" name="password" onChange={handlePasswordChange} ></input>
+      <input type="text" name="password" onChange={handlePasswordChange}></input>
       <br />
       <label htmlFor="bioCreator">Biography:</label>
       <br />
@@ -79,15 +104,16 @@ function Profile() {
       <br />
       {/* <label htmlFor="photoExperience">Fotos:</label>
       <input type="file" name="photoExperience" onChange={handlePasswordChange}></input> */}
-
+      <button onClick={handleUpdate}>Update</button>
       </form>
       <div>
 
         <button onClick={handleDelete}>Delete</button>
-        <Link to={`/profile/${details._id}/edit`}><button>Update</button></Link>
+        
       </div>
     </div>
   )
 }
-
+{/* <Link to={`/profile/${details._id}/edit`}></Link>
+</Link> */}
 export default Profile
