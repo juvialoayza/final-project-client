@@ -39,8 +39,8 @@ function Profile() {
 
   const handleFirstNameChange = (event) => setFirstNameInput(event.target.value)
   const handleLastNameChange = (event) => setLastNameInput(event.target.value)
-  const handleEmailChange = (event) => setEmailInput(event.target.value)
-  const handlePasswordChange = (event) => setPasswordInput(event.target.value)
+  // const handleEmailChange = (event) => setEmailInput(event.target.value)
+  // const handlePasswordChange = (event) => setPasswordInput(event.target.value)
   const handleBioCreatorChange = (event) => setBioCreatorInput(event.target.value)
 
   const handleUpdate = async (event) => {
@@ -99,9 +99,9 @@ function Profile() {
       <label htmlFor="password">Password:</label>
       <input type="text" name="password" onChange={handlePasswordChange}></input>
       <br /> */}
-      <label htmlFor="bioCreator">About you:</label>
+      <label htmlFor="bioCreator">Biography:</label>
       <br />
-      <textarea name="bioCreator" rows="10" cols="40" onChange={handleBioCreatorChange}>Cuentanos sobre ti</textarea>
+      <textarea name="bioCreator" rows="10" cols="40" onChange={handleBioCreatorChange}>Tell us about your experience</textarea>
       <br />
       {/* <label htmlFor="photoExperience">Fotos:</label>
       <input type="file" name="photoExperience" onChange={handlePasswordChange}></input> */}

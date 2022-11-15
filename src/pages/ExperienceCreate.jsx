@@ -25,7 +25,7 @@ function ExperienceCreate() {
 
   return (
     <div>
-        <h3>Create new Experience</h3>
+        <h3>Create new experience</h3>
         <form>
             <label htmlFor="name">Experience Name:</label>
             {/* <input type="text" name="name" value={nameInput} onChange={nameChange} /> */}
