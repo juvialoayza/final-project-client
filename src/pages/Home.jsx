@@ -25,7 +25,7 @@ function Home() {
         <div className="items-seccion">
           <div className="item-seccion">
             <div className="info-item-seccion"></div>
-            <img src={imgSevilla} alt="madrid-city" width="220px" className="img-item-seccion"/>
+            <img src={imgMadrid} alt="madrid-city" width="250px" className="img-item-seccion"/>
             <div className="name-city-item-seccion">Madrid</div>
           </div>
           <div className="item-seccion">
