@@ -13,19 +13,32 @@ function Navbar() {
   return (
     <div>
       {isLoggedIn === true ? (
-        <div>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/profile">Profile</NavLink>
+        <div className='items-menu'>
+          <div className='items-menu'>
+            <NavLink to="/">Home</NavLink>
+          </div>
+          <div className='items-menu'>
+            <NavLink to="/profile">Profile</NavLink>
+          </div>
+          <div className='items-menu'>
           <NavLink to="/experiences">Experiences</NavLink>
-
+          </div>
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
         <div>
+          <div className='items-menu'>
           <NavLink to="/">Home</NavLink>
+          </div>
+          <div className='items-menu'>
           <NavLink to="/experiences">Experiences</NavLink>
+          </div>
+          <div className='items-menu'>
           <NavLink to="/signup">Signup</NavLink>
+          </div>
+          <div className='items-menu'>
           <NavLink to="/login">Login</NavLink>
+          </div>
         </div>
       )
       }

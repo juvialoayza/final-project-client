@@ -1,4 +1,6 @@
-import React from 'react'
+import { useEffect } from "react"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 
 function PlacesList() {
 
@@ -28,7 +30,17 @@ function PlacesList() {
   }
     
   return (
-    <div>PlacesList</div>
+    <div>
+        {placeslist.map((eachPlace) => {
+            return (
+                <p key= {eachPlace._id}>
+                    <Link to={`/experiences/${eachPlace.place}`}>
+                    <h4> {eachPlace.place}</h4>
+                    </Link>
+                </p>
+            )
+        })}
+        PlacesList</div>
   )
 }
 

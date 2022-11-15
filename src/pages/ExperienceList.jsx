@@ -44,7 +44,7 @@ function ExperienceList() {
                       <h4>{eachExperience.name}</h4>
                       </Link>
                       <h6>{eachExperience.place}</h6>
-                      <p>{eachExperience.description}</p>
+                      {/* <p>{eachExperience.description}</p> */}
                     
                 </p>
             )
