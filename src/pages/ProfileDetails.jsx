@@ -53,6 +53,7 @@ function Profile() {
 
     <button onClick={handleDelete}>Delete</button>
       <Link to={"/profile/edit"}><button>Update</button></Link>
+      <Link to={"/profile/edit/new-experience"}><button>Create Experience</button></Link>
 
    
       <div>

@@ -26,7 +26,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<ProfileDetails/>} />
         <Route path="/profile/edit" element={<ProfileEdit/>} />
-        <Route path="/experiences/experienceCreate" element={<ExperienceCreate/>} />
+        <Route path="/profile/edit/new-experience" element={<ExperienceCreate/>} />
         <Route path="/experiences" element={<ExperienceList/>}/>
         <Route path="/experiences/:experienceId" element={<ExperienceDetail/>}/>
         <Route path="/experiences/placesList" element={<PlacesList/>}/>

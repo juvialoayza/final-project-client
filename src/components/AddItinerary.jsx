@@ -4,6 +4,9 @@ import {createItineraryService} from '../services/itinerary.services'
 
 function ItineraryCreate() {
   const [itineraryList, setItineraryList] = useState([])
+  const [isFetching, setIsFetching] = useState(true)
+
+  
 
   useEffect(()=> {
     getItinerary()
