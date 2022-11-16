@@ -9,10 +9,11 @@ const updateItineraryService = (itineraryUpdate)=> {
 }
 
 const deleteItineraryService = (itineraryId) => {
-    return service.delete()
+    return service.delete(`/itinerary/${itineraryId}`)
 }
 
 export{
     createItineraryService,
-    updateItineraryService
+    updateItineraryService,
+    deleteItineraryService
 }
