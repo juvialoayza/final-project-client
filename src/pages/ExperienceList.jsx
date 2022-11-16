@@ -45,6 +45,7 @@ function ExperienceList() {
                       </Link>
                       <h6>{eachExperience.place}</h6>
                       {/* <p>{eachExperience.description}</p> */}
+                      <img src={eachExperience.photoExperience} alt="foto-experiencia" width={300}/>
                     
                 </p>
             )

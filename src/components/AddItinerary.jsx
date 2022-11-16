@@ -11,7 +11,7 @@ function ItineraryCreate() {
   const [nameInput, setNameInput] = useState("")
   const [placeInput, setPlaceInput] = useState("")
   const [creatorInput, setCreatorInput] = useState()
-  const [experienceInput, setExperienceInput] = useState([])
+  const [experienceInput, setExperienceInput] = useState("")
   const [dateInput, setDateInput] = useState("")
   const [budgetInput, setBudgetInput] = useState("")
 
@@ -91,9 +91,12 @@ return (
     <label htmlfor="experience">Choose your experience</label>
             <select name="experience" onChange={handleExperienceChange}>
             <option value="">Choose one</option>
-{allExperiences.map((eachPlace) => {
+{allExperiences.map((eachExperience) => {
 return (
-        <option value={eachPlace}>{eachPlace}</option>
+  // <div>
+  //       {eachExperience.place === eachPlace ? <option value={eachExperience.name}>{eachExperience.name}</option> : ""}
+  //       </div>
+        <option value={eachExperience.name}>{eachExperience.name}</option>
         
 )
 })}
