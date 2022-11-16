@@ -13,6 +13,7 @@ import ExperienceCreate from './pages/ExperienceCreate';
 import ExperienceList from './pages/ExperienceList';
 import ExperienceDetail from './pages/ExperienceDetail';
 import PlacesList from './pages/PlacesList';
+import AddItinerary from './components/AddItinerary'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/experiences" element={<ExperienceList/>}/>
         <Route path="/experiences/:experienceId" element={<ExperienceDetail/>}/>
         <Route path="/experiences/placesList" element={<PlacesList/>}/>
+        <Route path="/my-itinerary" element={<AddItinerary/>}/>
 
         //páginas de errores
         <Route path="/error" element={<Error/>} />
