@@ -5,13 +5,14 @@ import {createItineraryService} from '../services/itinerary.services'
 import {experienceListService, placesListService} from '../services/experience.services'
 
 function ItineraryCreate() {
+  // const navigate = useNavigate()
   const [allPlaces, setAllPlaces] = useState([])
   const [allExperiences, setAllExperiences] = useState([])
 
   const [nameInput, setNameInput] = useState("")
   const [placeInput, setPlaceInput] = useState("")
   const [creatorInput, setCreatorInput] = useState()
-  const [experienceInput, setExperienceInput] = useState("")
+  const [experienceInput, setExperienceInput] = useState([])
   const [dateInput, setDateInput] = useState("")
   const [budgetInput, setBudgetInput] = useState("")
 
@@ -36,7 +37,7 @@ function ItineraryCreate() {
 
     try {
       await createItineraryService(newItinerary)
-      navigate("/profile")
+      Navigate("/profile")
       
     } catch(error) {
       console.log(error)
@@ -91,15 +92,27 @@ return (
     <label htmlfor="experience">Choose your experience</label>
             <select name="experience" onChange={handleExperienceChange}>
             <option value="">Choose one</option>
-{allExperiences.map((eachExperience) => {
-return (
-  // <div>
-  //       {eachExperience.place === eachPlace ? <option value={eachExperience.name}>{eachExperience.name}</option> : ""}
-  //       </div>
-        <option value={eachExperience.name}>{eachExperience.name}</option>
+
+{allPlaces.filter((eachPlace) => {
+allExperiences.map((eachExperience) => {
+  return (
+    <div>
+    {eachExperience.place === eachPlace ? <option value={eachExperience.name}>{eachExperience.name}</option> : ""}
+    </div>
+  )
+
+})
+})
+// map((eachExperience) => {
+// return (
+//   // <div>
+//   //       {eachExperience.place === eachPlace ? <option value={eachExperience.name}>{eachExperience.name}</option> : ""}
+//   //       </div>
+//         <option value={eachExperience}>{eachExperience.name}</option>
         
-)
-})}
+// )
+// })}
+}
 </select>
 <br />
             <label htmlFor="date">Date:</label>
