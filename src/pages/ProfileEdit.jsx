@@ -51,16 +51,17 @@ function Profile() {
   const handleUpdate = async (event) => {
 
   event.preventDefault()
-  try {
-    const updatedProfile = {
-      firstName: firstNameInput, 
-      lastName: lastNameInput,
-      email: emailInput,
-      password: passwordInput,
-      bioCreator: bioCreatorInput,
-      photoUser:photoUserInput
-    }
+ 
+  const updatedProfile = {
+    firstName: firstNameInput, 
+    lastName: lastNameInput,
+    email: emailInput,
+    password: passwordInput,
+    bioCreator: bioCreatorInput,
+    photoUser:photoUserInput
+  }
 
+  try {
   await updateProfileService(userId, updatedProfile)
   navigate("/profile")
   }catch(error) {
@@ -127,6 +128,10 @@ function Profile() {
       <br />
       <label htmlFor="photoUser">Profile Picture</label>
       <input type="file" name="photoUser" onChange={handleUploadImage}></input>
+      <br />
+      {isUploadingImage === true && <p>... loading content</p>}
+      {photoUserInput !== "" ? <img src={photoUserInput} alt="image" width={200} /> : <p> Choose image </p>}
+      <br />
       <button onClick={handleUpdate}>Update</button>
       </form>
       <div>

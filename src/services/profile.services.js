@@ -5,7 +5,7 @@ const getProfileDetailsService = () => {
 }
 
 const updateProfileService = (userId, userChanges) => {
-    return service.patch(`/profile/${userId}`, userChanges)
+    return service.patch(`/profile/${userId}/edit`, userChanges)
 }
 
 const deleteProfileService = (userId) => {
