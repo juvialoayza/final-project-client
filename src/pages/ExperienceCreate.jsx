@@ -2,10 +2,13 @@ import React from 'react'
 import {useEffect} from 'react'
 import {useState} from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
-import {createExperienceService} from '../services/experience.services'
+import {createExperienceService, placesListService} from '../services/experience.services'
 
 
-function ExperienceCreate(props) {
+function ExperienceCreate() {
+
+  const [allPlaces, setAllPlaces] = useState([])
+
   const [nameInput, setNameInput] = useState("")
   const [descriptionInput, setDescriptionInput] = useState("")
   const [creatorInput, setCreatorInput] = useState()
@@ -13,7 +16,7 @@ function ExperienceCreate(props) {
   const [priceInput, setPriceInput] = useState("")
   const [durationInput, setDurationInput] = useState("")
   const [dateInput, setDateInput] = useState("")
-  const [photoexperienceInput, setPhotoexperienceInput] = useState("")
+  const [photoExperienceInput, setPhotoexperienceInput] = useState("")
 
   const handleNameChange = (event) => setNameInput(event.target.value)
   const handleDescriptionChange = (event) => setDescriptionInput(event.target.value)
@@ -22,7 +25,7 @@ function ExperienceCreate(props) {
   const handlePriceChange = (event) => setPriceInput(event.target.value)
   const handleDurationChange = (event) => setDurationInput(event.target.value)
   const handleDateChange = (event) => setDateInput(event.target.value)
-  const handlePhotoexperienceChange = (event) => setPhotoexperienceInput(event.target.value)
+  const handlePhotoExperienceChange = (event) => setPhotoexperienceInput(event.target.value)
 
 const handleSubmit = async (event) => {
   event.preventDefault()
@@ -35,7 +38,7 @@ const handleSubmit = async (event) => {
     price: priceInput,
     duration: durationInput,
     date: dateInput,
-    photoexperience: photoexperienceInput
+    photoexperience: photoExperienceInput
   }
   try {
     await createExperienceService(newExperience)
@@ -46,7 +49,19 @@ const handleSubmit = async (event) => {
   }
 }
 
+const getAllPlaces = async (event) => {
+  try {
+  const allPlaces = await placesListService()
+  console.log(allPlaces)
+  setAllPlaces(allPlaces.data.placesList)
+  }catch(error) {
+    console.log(error)
+  }
+}
 
+useEffect(() => {
+getAllPlaces()
+}, [])
 
   return (
     <div>
@@ -55,11 +70,20 @@ const handleSubmit = async (event) => {
             <label htmlFor="name">Experience Name:</label>
             <input type="text" name="name" value={nameInput} onChange={handleNameChange} />
             <br />
+            <label htmlfor="place">Place</label>
+            <select name="place" onChange={handlePlaceChange}>
+            <option value="">Choose a place</option>
+{allPlaces.map((eachPlace) => {
+return (
+        <option value={eachPlace}>{eachPlace}</option>
+        
+)
+})}
+</select>
+  
+    <br />
             <label htmlFor="description">Tell us about your experience:</label>
             <input type="text" name="description" value={descriptionInput} onChange={handleDescriptionChange} />
-            <br />
-            <label htmlFor="place">Tell us about your experience:</label>
-            <input type="text" name="place" value={placeInput} onChange={handlePlaceChange} />
             <br />
             <label htmlFor="duration">Duration:</label>
             <input type="text" name="duration" value={durationInput} onChange={handleDurationChange} />
@@ -67,8 +91,8 @@ const handleSubmit = async (event) => {
             <label htmlFor="date">Dates:</label>
             <input type="text" name="date" value={dateInput} onChange={handleDateChange} />
             <br />
-            <label htmlFor="photoexperience">Your images:</label>
-            <input type="text" name="photoexperience" value={photoexperienceInput} onChange={handlePhotoexperienceChange} />
+            <label htmlFor="photoExperience">Your images:</label>
+            <input type="file" name="photoExperience" value={photoExperienceInput} onChange={handlePhotoExperienceChange} />
             <br />
             <button onClick={handleSubmit}>Create</button>
         </form>

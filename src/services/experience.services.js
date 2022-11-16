@@ -9,9 +9,9 @@ const experienceListService = () => {
   // const {name} = useParams()
   return service.get("/experiences")
 }
-
+//!Este es el service para enviar la info de los lugares/ciudades
 const placesListService = () => {
-  return service.get("/experiences/experienceCreate")
+  return service.get("/experiences/places")
 }
 
 const experienceDetailsService = (experienceId) => {
