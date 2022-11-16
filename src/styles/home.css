@@ -1,7 +1,7 @@
 .cont-img-header{
     width:100%;
     height: 500px;
-   padding-top: 0.1px;
+   padding-top: 10px;
    margin: 0 auto;
 }
 
@@ -14,4 +14,36 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+}
+
+.items-menu {
+    padding: 20 36;
+    display: flex;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color:#FFFFFF; 
+}
+
+.item-menu {
+    padding: 10px 20px;
+    margin-left:10px;
+    font-size: 0.9rem;
+}
+
+.description-page{
+    width:auto;
+    height: auto;
+    line-height: 1.4em;
+    padding: 0 50px 20px 50px;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 26px;
+    margin-bottom: 26px;
+    text-align: left;
+    padding-left: 50px;
 }
