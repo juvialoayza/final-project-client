@@ -33,7 +33,7 @@ function Login() {
       localStorage.setItem("authToken", response.data.authToken)
 
       authenticatorUser()
-      navigate("/profile") 
+      navigate("/") 
 
 
     } catch (error) {
