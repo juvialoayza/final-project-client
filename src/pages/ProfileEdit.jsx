@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams, Link } from "react-router-dom"
 import { deleteProfileService, getProfileDetailsService, updateProfileService } from "../services/profile.services"
+import {uploadImageService} from "../services/upload.services"
 
 function Profile() {
 
@@ -16,6 +17,8 @@ function Profile() {
   const [emailInput, setEmailInput] = useState("")
   const [passwordInput, setPasswordInput] = useState("")
   const [bioCreatorInput, setBioCreatorInput] = useState("")
+  const [photoUserInput, setPhotoUserInput] = useState("")
+  const [isUploadingImage, setIsUploadingImage] = useState(false)
 
   useEffect(() => {
     getData()
@@ -31,6 +34,7 @@ function Profile() {
       setEmailInput(response.data.email)
       setPasswordInput(response.data.password)
       setBioCreatorInput(response.data.bioCreator)
+      setPhotoUserInput(response.data.photoUser)
       setIsFetching(false)
     } catch (error) {
       navigate("/error")
@@ -42,6 +46,7 @@ function Profile() {
   // const handleEmailChange = (event) => setEmailInput(event.target.value)
   // const handlePasswordChange = (event) => setPasswordInput(event.target.value)
   const handleBioCreatorChange = (event) => setBioCreatorInput(event.target.value)
+  const handlePhotoUserChange=(event) => setPhotoUserInput(event.target.value)
 
   const handleUpdate = async (event) => {
 
@@ -52,13 +57,12 @@ function Profile() {
       lastName: lastNameInput,
       email: emailInput,
       password: passwordInput,
-      bioCreator: bioCreatorInput
+      bioCreator: bioCreatorInput,
+      photoUser:photoUserInput
     }
 
   await updateProfileService(userId, updatedProfile)
-  
   navigate("/profile")
-
   }catch(error) {
     navigate("/error")
   }
@@ -82,6 +86,24 @@ function Profile() {
     }
   }
 
+  const handleUploadImage = async (event) => {
+  setIsUploadingImage(true)
+  console.log(event.target.files)
+      
+  const sendForm = new FormData()
+  sendForm.append("image", event.target.files[0])
+      
+  try {
+   const response = await uploadImageService(sendForm)
+            console.log(response.data.image)
+            setPhotoUserInput(response.data.image)
+            setIsUploadingImage(false)
+          } catch (error) {
+            console.log(error)
+          }
+        }
+        
+
   return (
     <div>
       <h3>👋 Hi {details.firstName} </h3>
@@ -103,8 +125,8 @@ function Profile() {
       <br />
       <textarea name="bioCreator" rows="10" cols="40" onChange={handleBioCreatorChange}>Tell us about your experience</textarea>
       <br />
-      {/* <label htmlFor="photoExperience">Fotos:</label>
-      <input type="file" name="photoExperience" onChange={handlePasswordChange}></input> */}
+      <label htmlFor="photoUser">Profile Picture</label>
+      <input type="file" name="photoUser" onChange={handleUploadImage}></input>
       <button onClick={handleUpdate}>Update</button>
       </form>
       <div>
@@ -115,6 +137,4 @@ function Profile() {
     </div>
   )
 }
-{/* <Link to={`/profile/${details._id}/edit`}></Link>
-</Link> */}
 export default Profile
