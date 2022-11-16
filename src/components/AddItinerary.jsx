@@ -1,10 +1,12 @@
 import {useEffect} from 'react'
 import {useState} from 'react'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import {createItineraryService} from '../services/itinerary.services'
 import {experienceListService, placesListService} from '../services/experience.services'
 
 function ItineraryCreate() {
+  const navigate = useNavigate()
+  
   const [allPlaces, setAllPlaces] = useState([])
   const [allExperiences, setAllExperiences] = useState([])
 
