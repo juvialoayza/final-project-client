@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Navigate, NavLink } from 'react-router-dom'
 import { AuthContext } from "../context/auth.context"
 import homeBtn from "../assets/home-button.png"
 function Navbar() {
@@ -9,6 +9,7 @@ function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("authToken")
     authenticatorUser()
+   
   }
   return (
     <div>
@@ -26,7 +27,7 @@ function Navbar() {
           <div className='items-menu'>
           <NavLink to="/my-itinerary">Next Trip</NavLink>
           </div>
-          <button onClick={handleLogout}>Logout</button>
+          <NavLink to="/"><button onClick={handleLogout}>Logout</button></NavLink>
         </div>
       ) : (
         <div>

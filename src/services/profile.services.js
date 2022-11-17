@@ -12,6 +12,7 @@ const deleteProfileService = (userId) => {
     return service.delete (`/profile/${userId}`)
 }
 
+
 export{
     getProfileDetailsService,
     updateProfileService,

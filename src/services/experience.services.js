@@ -19,9 +19,20 @@ const experienceDetailsService = (experienceId) => {
   return service.get(`/experiences/${experienceId}`)
 }
 
+const experienceToFavoritesService = (experienceId) => {
+return service.patch(`/favorites/${experienceId}`)
+}
+
+const getFavoritesListService = () => {
+  return service.get("/experiences/my-favorites")
+}
+
 export {
     createExperienceService,
     experienceListService,
     placesListService,
-    experienceDetailsService
+    experienceDetailsService,
+    experienceToFavoritesService,
+    getFavoritesListService
+
 }
