@@ -2,20 +2,20 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import Navbar from "../components/Navbar"
-import {experienceListService} from "../services/experience.services"
+import { experienceListService } from "../services/experience.services"
 
 
 function ExperienceList() {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
-    // const {cityName} = useParams()
+  // const {cityName} = useParams()
 
-    const [list, setList] = useState([])
-    const [isFetching, setIsFetching] = useState(true)
+  const [list, setList] = useState([])
+  const [isFetching, setIsFetching] = useState(true)
 
-    useEffect(() => {
+  useEffect(() => {
     getExperienceList()
-    }, [])
+  }, [])
 
   const getExperienceList = async () => {
     try {
@@ -24,8 +24,8 @@ function ExperienceList() {
       setList(response.data)
       setIsFetching(false)
 
-    } catch(error) {
-        console.log(error)
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -34,22 +34,24 @@ function ExperienceList() {
   }
 
   return (
-    <div>
-        
-
-        {list.map((eachExperience) => {
-            return (
-                <p key={eachExperience._id}>
-                    <Link to={`/experiences/${eachExperience._id}`}>
-                      <h4>{eachExperience.name}</h4>
-                      </Link>
-                      <h6>{eachExperience.place}</h6>
-                      {/* <p>{eachExperience.description}</p> */}
-                      <img src={eachExperience.photoExperience} alt="foto-experiencia" width={300}/>
-                    
-                </p>
-            )
-        })}
+    <div >
+      {list.map((eachExperience) => {
+        return (
+          <p key={eachExperience._id}>
+              <div className="card-main">
+                <img className="card-photo" src={eachExperience.photoExperience} alt="photo-experience" />
+                <div className="card-desc">
+            <Link to={`/experiences/${eachExperience._id}`}>
+                  <p className="card-title">{eachExperience.name}</p>
+                </Link>
+                <p className="card-place">{eachExperience.place}</p>
+                <p className="card-price"><span className="bold">€{eachExperience.price}/ </span><span>person</span></p>
+                
+              </div>
+            </div>
+          </p>
+        )
+      })}
 
     </div>
   )

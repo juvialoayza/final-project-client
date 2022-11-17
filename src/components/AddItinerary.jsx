@@ -38,7 +38,7 @@ function ItineraryCreate() {
 
     try {
       await createItineraryService(newItinerary)
-      Navigate("/profile")
+      navigate("/profile")
       
     } catch(error) {
       console.log(error)
