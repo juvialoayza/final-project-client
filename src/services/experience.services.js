@@ -27,12 +27,17 @@ const getFavoritesListService = () => {
   return service.get("/experiences/my-favorites")
 }
 
+const categoriesListService = () => {
+  return service.post("/experiences/categories")
+}
+
 export {
     createExperienceService,
     experienceListService,
     placesListService,
     experienceDetailsService,
     experienceToFavoritesService,
-    getFavoritesListService
+    getFavoritesListService,
+    categoriesListService
 
 }

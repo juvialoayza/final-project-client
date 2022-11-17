@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams, Link } from "react-router-dom"
-import { deleteProfileService, getProfileDetailsService, updateProfileService } from "../services/profile.services"
+import { getProfileDetailsService, updateProfileService } from "../services/profile.services"
 import {uploadImageService} from "../services/upload.services"
 
 function Profile() {
@@ -75,17 +75,17 @@ function Profile() {
     return <h3>...searching</h3>
   }
 
-  const handleDelete = async () => {
-    try {
-      await deleteProfileService()
-      console.log("Deleted element")
+  // const handleDelete = async () => {
+  //   try {
+  //     await deleteProfileService()
+  //     console.log("Deleted element")
 
-      navigate("/profile")
-    } catch (error) {
-      console.log(error)
-      navigate("/error")
-    }
-  }
+  //     navigate("/profile")
+  //   } catch (error) {
+  //     console.log(error)
+  //     navigate("/error")
+  //   }
+  // }
 
   const handleUploadImage = async (event) => {
   setIsUploadingImage(true)
@@ -124,7 +124,7 @@ function Profile() {
       <br /> */}
       <label htmlFor="bioCreator">Biography:</label>
       <br />
-      <textarea name="bioCreator" rows="10" cols="40" onChange={handleBioCreatorChange}>Tell us about your experience</textarea>
+      <textarea name="bioCreator" rows="10" cols="40" onChange={handleBioCreatorChange}>Tell us about you</textarea>
       <br />
       <label htmlFor="photoUser">Profile Picture</label>
       <input type="file" name="photoUser" onChange={handleUploadImage}></input>

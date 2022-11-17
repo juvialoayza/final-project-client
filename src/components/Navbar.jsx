@@ -27,6 +27,9 @@ function Navbar() {
           <div className='items-menu'>
           <NavLink to="/my-itinerary">Next Trip</NavLink>
           </div>
+          <div className='items-menu'>
+          <NavLink to="/my-itinerary/list">My planned trips</NavLink>
+          </div>
           <NavLink to="/"><button onClick={handleLogout}>Logout</button></NavLink>
         </div>
       ) : (

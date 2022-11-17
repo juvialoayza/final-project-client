@@ -33,17 +33,17 @@ function Profile() {
     return <h3>...searching</h3>
   }
 
-  const handleDelete = async () => {
-    try {
-      await deleteProfileService(userId)
-      console.log("Deleted element")
+  // const handleDelete = async () => {
+  //   try {
+  //     await deleteProfileService(userId)
+  //     console.log("Deleted element")
 
-      navigate("/profile")
-    } catch (error) {
-      console.log(error)
-      navigate("/error")
-    }
-  }
+  //     navigate("/profile")
+  //   } catch (error) {
+  //     console.log(error)
+  //     navigate("/error")
+  //   }
+  // }
 
   
 
@@ -58,7 +58,7 @@ function Profile() {
       
       <Link to={"/profile/my-favorites"}><button>My favorites</button></Link>
       <br />
-    <button onClick={handleDelete}>Delete</button>
+    {/* <button onClick={handleDelete}>Delete</button> */}
       <Link to={"/profile/edit"}><button>Update</button></Link>
       <Link to={"/profile/edit/new-experience"}><button>Create Experience</button></Link>
       <Link to={"/profile/edit/my-experiences"}><button>Manage your experiences</button></Link>

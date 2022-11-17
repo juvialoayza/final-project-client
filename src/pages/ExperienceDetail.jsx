@@ -48,8 +48,9 @@ function ExperienceDetail() {
           <p>{experienceInfo.description}</p>
           <p>{experienceInfo.price}</p>
           <p>{experienceInfo.duration}</p>
-          <p>{experienceInfo.creator[0].firstName} {experienceInfo.creator[0].lastName}</p>
+          <p>{experienceInfo.creator.firstName} {experienceInfo.creator.lastName}</p>
           <img src={experienceInfo.photoExperience} alt="photo-experience" width={500} />
+          <br />
           <button onClick={addFavorites}>Add to favorites</button>
           {/* <form>
           <label htmlFor="favorites">Add to favorites:</label>

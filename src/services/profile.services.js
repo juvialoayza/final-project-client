@@ -8,13 +8,13 @@ const updateProfileService = (userId, userChanges) => {
     return service.patch(`/profile/${userId}/edit`, userChanges)
 }
 
-const deleteProfileService = (userId) => {
-    return service.delete (`/profile/${userId}`)
-}
+// const deleteProfileService = (userId) => {
+//     return service.delete (`/profile/${userId}`)
+// }
 
 
 export{
     getProfileDetailsService,
-    updateProfileService,
-    deleteProfileService
+    updateProfileService
+    // deleteProfileService
 }

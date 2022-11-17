@@ -16,6 +16,7 @@ import PlacesList from './pages/PlacesList';
 import AddItinerary from './components/AddItinerary'
 import MyExperiencesList from './pages/MyExperiencesList';
 import ProfileFavorites from './components/ProfileFavorites';
+import MyTrips from './pages/MyTrips';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/my-itinerary" element={<AddItinerary/>}/>
         <Route path="/profile/edit/my-experiences" element={<MyExperiencesList/>}/>
         <Route path="/profile/my-favorites" element={<ProfileFavorites/>}/>
+        <Route path="/my-itinerary/list" element={<MyTrips/>}/>
 
         //páginas de errores
         <Route path="/error" element={<Error/>} />
