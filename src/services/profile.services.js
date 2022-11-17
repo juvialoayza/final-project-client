@@ -9,7 +9,7 @@ const updateProfileService = (userId, userChanges) => {
 }
 
 const deleteProfileService = (userId) => {
-    return service.delete (`/profile/${userId}`)
+    return service.delete (`/profile/${userId}/delete`)
 }
 
 
