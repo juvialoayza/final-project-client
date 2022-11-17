@@ -43,21 +43,23 @@ function ExperienceDetail() {
   
   return (
     <div>
-         <h2>Details</h2>
-          <p>{experienceInfo.name}</p>
-          <p>{experienceInfo.description}</p>
-          <p>{experienceInfo.price}</p>
-          <p>{experienceInfo.duration}</p>
-          <p>{experienceInfo.creator[0].firstName} {experienceInfo.creator[0].lastName}</p>
-          <img src={experienceInfo.photoExperience} alt="photo-experience" width={500} />
+         <div className="card-main">
+         <img className="card-photo" src={experienceInfo.photoExperience} alt="photoExperience" />
+              <div className="card-desc">
+                <p className="card-title">{experienceInfo.name}</p>
+                <p>Created by: {experienceInfo.creator[0].firstName} {experienceInfo.creator[0].lastName}</p>
+                <p>{experienceInfo.duration}</p>
+                <p className="card-price"><span className="bold">€{experienceInfo.price}/ </span><span>person</span></p>
+                <p>{experienceInfo.description}</p>
           <button onClick={addFavorites}>Add to favorites</button>
           {/* <form>
           <label htmlFor="favorites">Add to favorites:</label>
           <input type="submit" value="♡" onChange={addFavorites}/>
           </form> */}
-          
-       
-    </div>
+         </div>
+         </div>
+         </div>
+    
   )
 }
 
