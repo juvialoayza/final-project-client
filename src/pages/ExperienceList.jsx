@@ -39,7 +39,7 @@ function ExperienceList() {
         return (
           <p key={eachExperience._id}>
               <div className="card-main">
-                <img className="card-photo" src={eachExperience.photoExperience} alt="photo-experience" />
+                <img className="card-photo" src={eachExperience.photoExperience} alt="photo-experience" width={150} />
                 <div className="card-desc">
             <Link to={`/experiences/${eachExperience._id}`}>
                   <p className="card-title">{eachExperience.name}</p>

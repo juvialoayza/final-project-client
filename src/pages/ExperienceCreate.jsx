@@ -2,16 +2,18 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { createExperienceService, placesListService } from '../services/experience.services'
+import { createExperienceService, placesListService, categoriesListService } from '../services/experience.services'
 import { uploadImageService } from "../services/upload.services"
 
 function ExperienceCreate() {
   const navigate = useNavigate()
 
   const [allPlaces, setAllPlaces] = useState([])
+  const [allCategories, setAllCategories] = useState([])
 
   const [nameInput, setNameInput] = useState("")
   const [descriptionInput, setDescriptionInput] = useState("")
+  const [categoryInput, setCategoryInput] = useState("")
   const [creatorInput, setCreatorInput] = useState()
   const [placeInput, setPlaceInput] = useState("")
   const [priceInput, setPriceInput] = useState("")
@@ -23,6 +25,7 @@ function ExperienceCreate() {
   const handleNameChange = (event) => setNameInput(event.target.value)
   const handleDescriptionChange = (event) => setDescriptionInput(event.target.value)
   const handleCreatorChange = (event) => setCreatorInput(event.target.value)
+  const handleCategoryChange = (event) => setCategoryInput(event.target.value)
   const handlePlaceChange = (event) => setPlaceInput(event.target.value)
   const handlePriceChange = (event) => setPriceInput(event.target.value)
   const handleDurationChange = (event) => setDurationInput(event.target.value)
@@ -35,6 +38,7 @@ function ExperienceCreate() {
     const newExperience = {
       name: nameInput,
       description: descriptionInput,
+      category: categoryInput,
       creator: creatorInput,
       place: placeInput,
       price: priceInput,
@@ -60,9 +64,22 @@ function ExperienceCreate() {
       console.log(error)
     }
   }
+  
+  const getAllCategories = async (event) => {
+    try {
+      const allCategories = await categoriesListService()
+      console.log(allCategories)
+      setAllCategories(allCategories.data.categoryList)
+    }catch(error) {
+      console.log(error)
+    }
+  }
+  
+
 
   useEffect(() => {
     getAllPlaces()
+    getAllCategories()
   }, [])
 
   const handleUploadImage = async (event) => {
@@ -99,13 +116,26 @@ function ExperienceCreate() {
             )
           })}
         </select>
+        <br />
+        <label htmlfor="category">Category</label>
+        <select name="category" onChange={handleCategoryChange}>
+          <option value="">Choose a category</option>
+          {allCategories.map((eachCategory) => {
+            return (
+              <option value={eachCategory}>{eachCategory}</option>
 
+            )
+          })}
+        </select>
         <br />
         <label htmlFor="description">Tell us about your experience:</label>
         <input type="text" name="description" value={descriptionInput} onChange={handleDescriptionChange} />
         <br />
         <label htmlFor="duration">Duration:</label>
         <input type="text" name="duration" value={durationInput} onChange={handleDurationChange} />
+        <br />
+        <label htmlFor="price">Price:</label>
+        <input type="text" name="price" value={priceInput} onChange={handlePriceChange} />
         <br />
         <label htmlFor="date">Dates:</label>
         <input type="text" name="date" value={dateInput} onChange={handleDateChange} />
