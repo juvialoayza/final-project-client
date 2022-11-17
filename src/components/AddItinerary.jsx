@@ -13,7 +13,7 @@ function ItineraryCreate() {
   const [nameInput, setNameInput] = useState("")
   const [placeInput, setPlaceInput] = useState("")
   const [creatorInput, setCreatorInput] = useState()
-  const [experienceInput, setExperienceInput] = useState([])
+  const [experienceInput, setExperienceInput] = useState("")
   const [dateInput, setDateInput] = useState("")
   const [budgetInput, setBudgetInput] = useState("")
 
@@ -94,27 +94,24 @@ return (
             <select name="experience" onChange={handleExperienceChange}>
             <option value="">Choose one</option>
 
-{allPlaces.filter((eachPlace) => {
-allExperiences.map((eachExperience) => {
-  return (
-    <div>
-    {eachExperience.place === eachPlace ? <option value={eachExperience.name}>{eachExperience.name}</option> : ""}
-    </div>
-  )
+{allExperiences.filter(eachExperience => eachExperience.place === placeInput).map(eachPlace => (
+  <option value={eachPlace.name}>{eachPlace.name}</option>
+))}
 
-})
-})
-// map((eachExperience) => {
-// return (
-//   // <div>
-//   //       {eachExperience.place === eachPlace ? <option value={eachExperience.name}>{eachExperience.name}</option> : ""}
-//   //       </div>
-//         <option value={eachExperience}>{eachExperience.name}</option>
-        
-// )
-// })}
-}
 </select>
+
+{/* 
+  {allExperiences.filter((eachExperience) => {
+    if (eachExperience.place === placeInput)
+  })
+  .map((filteredExperience) => {
+    return (
+      <option value={filteredExperience.name}>{filteredExperience.name}</option>
+    )
+  })} */}
+
+
+
 <br />
             <label htmlFor="date">Date:</label>
             <input type="text" name="date" value={dateInput} onChange={handleDateChange} />

@@ -12,9 +12,18 @@ const updateProfileService = (userId, userChanges) => {
 //     return service.delete (`/profile/${userId}`)
 // }
 
+const showMyItinerary = () => {
+    return service.get("/profile/my-profile/my-itinerary")
+}
+
+const showUserExperiences = () => {
+    return service.get("/profile/my-experiences")
+}
 
 export{
     getProfileDetailsService,
-    updateProfileService
+    updateProfileService,
+    showMyItinerary,
+    showUserExperiences
     // deleteProfileService
 }

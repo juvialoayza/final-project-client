@@ -26,7 +26,7 @@ function Profile() {
 
   const getData = async () => {
     try {
-      const response = await getProfileDetailsService()
+      const response = await updateProfileService()
       // console.log(response.data)
       setDetails(response.data)
       setFirstNameInput(response.data.firstName)
@@ -75,17 +75,7 @@ function Profile() {
     return <h3>...searching</h3>
   }
 
-  // const handleDelete = async () => {
-  //   try {
-  //     await deleteProfileService()
-  //     console.log("Deleted element")
 
-  //     navigate("/profile")
-  //   } catch (error) {
-  //     console.log(error)
-  //     navigate("/error")
-  //   }
-  // }
 
   const handleUploadImage = async (event) => {
   setIsUploadingImage(true)
@@ -134,11 +124,7 @@ function Profile() {
       <br />
       <button onClick={handleUpdate}>Update</button>
       </form>
-      <div>
-
-        <button onClick={handleDelete}>Delete</button>
-        
-      </div>
+     
     </div>
   )
 }
