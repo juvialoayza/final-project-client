@@ -35,7 +35,7 @@ function ExperienceDetail() {
     try {
      const addFavoritesToUser = await experienceToFavoritesService()
      console.log(addFavoritesToUser)
-     setAddToFavorites(addFavoritesToUser.data)
+     setAddToFavorites(addFavoritesToUser)
     }catch(error) {
       console.log(error)
     }
@@ -44,7 +44,7 @@ function ExperienceDetail() {
   return (
     <div>
          <div className="card-main">
-         <img className="card-photo" src={experienceInfo.photoExperience} alt="photoExperience" />
+         <img className="card-photo" src={experienceInfo.photoExperience} alt="photoExperience" width={250} />
               <div className="card-desc">
                 <p className="card-title">{experienceInfo.name}</p>
                 <p>Created by: {experienceInfo.creator.firstName} {experienceInfo.creator.lastName}</p>

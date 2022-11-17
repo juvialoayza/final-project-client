@@ -1,9 +1,11 @@
 import React from 'react'
 import {showUserExperiences} from "../services/profile.services"
 import { useEffect, useState } from "react"
+import {useNavigate} from "react-router-dom"
 
 
 function MyExperiencesList() {
+  const navigate = useNavigate()
   
 
   const [experiences, setExperiences] = useState([])

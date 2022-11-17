@@ -50,6 +50,7 @@ function Profile() {
   return (
     <div>
 
+      <h1>Profile</h1>
       <h3>👋 Hola {details.firstName} </h3>
       <img src={details.photoUser} alt="photo-user" width={200} />
       <p>Name: {details.firstName}</p>

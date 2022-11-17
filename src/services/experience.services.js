@@ -19,7 +19,7 @@ const experienceDetailsService = (experienceId) => {
 }
 
 const experienceToFavoritesService = (experienceId) => {
-return service.patch(`/favorites/${experienceId}`)
+return service.patch(`/experiences/my-favorites/${experienceId}`)
 }
 
 const getFavoritesListService = () => {
