@@ -33,6 +33,11 @@ function ProfileFavorites() {
     {favoritesList.map((eachFavorite) => {
     return (
         <p key={eachFavorite._id}>
+          {eachFavorite.map((eachFavorite)=>{
+        return(
+          <p>{eachFavorite.name}</p>
+        )
+      })}
         <h6>{eachFavorite.name}</h6>
         <img src={eachFavorite.photoExperience} alt="photoExperience" width={80}/>
         </p>

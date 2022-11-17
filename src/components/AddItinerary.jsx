@@ -81,7 +81,7 @@ function ItineraryCreate() {
             <label htmlfor="place">Where are you going?</label>
             <select name="place" onChange={handlePlaceChange}>
             <option value="">Choose a place</option>
-{allPlaces.map((eachPlace) => {
+            {allPlaces.map((eachPlace) => {
 return (
         <option value={eachPlace}>{eachPlace}</option>
         

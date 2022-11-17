@@ -15,7 +15,7 @@ import ExperienceDetail from './pages/ExperienceDetail';
 import PlacesList from './pages/PlacesList';
 import AddItinerary from './components/AddItinerary'
 import MyExperiencesList from './pages/MyExperiencesList';
-import ProfileFavorites from './components/ProfileFavorites';
+import ExperienceFavorites from './components/ExperienceFavorites';
 import MyTrips from './pages/MyTrips';
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
         <Route path="/experiences/placesList" element={<PlacesList/>}/>
         <Route path="/my-itinerary" element={<AddItinerary/>}/>
         <Route path="/profile/edit/my-experiences" element={<MyExperiencesList/>}/>
-        <Route path="/profile/my-favorites" element={<ProfileFavorites/>}/>
+        <Route path="/profile/my-favorites" element={<ExperienceFavorites/>}/>
         <Route path="/my-itinerary/list" element={<MyTrips/>}/>
 
         //páginas de errores
