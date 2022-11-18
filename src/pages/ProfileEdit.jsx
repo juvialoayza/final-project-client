@@ -100,10 +100,16 @@ function Profile() {
       <h3>👋 Hi {details.firstName} </h3>
       <form>
 
-      <label htmlFor="firstName">Name:</label>
+      <label htmlFor="photoUser">Profile Picture: </label>
+      <input type="file" name="photoUser" onChange={handleUploadImage}></input>
+      <br />
+      {isUploadingImage === true && <p>... loading content</p>}
+      {photoUserInput !== "" ? <img src={photoUserInput} alt="image" width={200} /> : <p> Choose image </p>}
+      <br />
+      <label htmlFor="firstName">Name: </label>
       <input type="text" name="firstName" value={firstNameInput} onChange={handleFirstNameChange}></input>
       <br />
-      <label htmlFor="lastName">Last Name:</label>
+      <label htmlFor="lastName">Last Name: </label>
       <input type="text" name="lastName" value={lastNameInput} onChange={handleLastNameChange}></input>
       <br />
       {/* <label htmlFor="email">Email:</label>
@@ -112,17 +118,11 @@ function Profile() {
       <label htmlFor="password">Password:</label>
       <input type="text" name="password" onChange={handlePasswordChange}></input>
       <br /> */}
-      <label htmlFor="bioCreator">Biography:</label>
+      <label htmlFor="bioCreator">Biography: </label>
       <br />
       <textarea name="bioCreator" rows="10" cols="40" onChange={handleBioCreatorChange}>Tell us about you</textarea>
       <br />
-      <label htmlFor="photoUser">Profile Picture</label>
-      <input type="file" name="photoUser" onChange={handleUploadImage}></input>
-      <br />
-      {isUploadingImage === true && <p>... loading content</p>}
-      {photoUserInput !== "" ? <img src={photoUserInput} alt="image" width={200} /> : <p> Choose image </p>}
-      <br />
-      <button onClick={handleUpdate}>Update</button>
+      <button onClick={handleUpdate}>Save</button>
       </form>
      
     </div>

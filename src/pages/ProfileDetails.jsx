@@ -53,28 +53,29 @@ function Profile() {
       <h1>Profile</h1>
       <h3>👋 Hola {details.firstName} </h3>
       <img src={details.photoUser} alt="photo-user" width={200} />
+      <div>
+      <h3>Personal information</h3>
       <p>Name: {details.firstName}</p>
       <p>Last Name: {details.lastName}</p>
       <p>Biography: {details.bioCreator}</p>
+      </div>
 
+      <div>
       {details.favorites.map((eachFavorite)=>{
         return(
-          <p>{eachFavorite.name}</p>
+          <p>My favorites: {eachFavorite.name}</p>
         )
       })}
+      </div>
       
-      <Link to={"/profile/my-favorites"}><button>My favorites</button></Link>
-      <br />
+      {/* <Link to={"/profile/my-favorites"}><button>My favorites</button></Link>
+      <br /> */}
 
-      <Link to={"/profile/edit"}><button>Update</button></Link>
+      <Link to={"/profile/edit"}><button>Edit</button></Link>
       <Link to={"/profile/edit/new-experience"}><button>Create Experience</button></Link>
       <Link to={"/profile/edit/my-experiences"}><button>Manage your experiences</button></Link>
       {/* <ProfileFavorites/> */}
    
-      <div>
-
-
-      </div>
     </div>
   )
 }

@@ -91,7 +91,7 @@ return (
   
     <br />
     <label htmlfor="experience">Choose your experience</label>
-            <select name="experience" onChange={handleExperienceChange}>
+            <select name="experience" multiple="true" onChange={handleExperienceChange}>
             <option value="">Choose one</option>
 
 {allExperiences.filter(eachExperience => eachExperience.place === placeInput).map(eachPlace => (

@@ -30,6 +30,13 @@ const categoriesListService = () => {
   return service.post("/experiences/categories")
 }
 
+const updateExperienceService = (experienceId, updatedMyExperiences) => {
+  return service.patch(`/experiences/:experienceId/edit`, updatedMyExperiences)
+}
+
+const deleteExperienceService = (experienceId) => {
+  return service.delete(`/experiences/${experienceId}`)
+}
 export {
     createExperienceService,
     experienceListService,
@@ -37,6 +44,8 @@ export {
     experienceDetailsService,
     experienceToFavoritesService,
     getFavoritesListService,
-    categoriesListService
+    categoriesListService,
+    deleteExperienceService,
+    updateExperienceService
 
 }

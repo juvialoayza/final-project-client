@@ -51,7 +51,7 @@ function ExperienceDetail() {
                 <p>{experienceInfo.duration}</p>
                 <p className="card-price"><span className="bold">€{experienceInfo.price}/ </span><span>person</span></p>
                 <p>{experienceInfo.description}</p>
-          <button onClick={addFavorites}>Add to favorites</button>
+          <button onClick={addFavorites}>Add to favorites ♡</button>
           {/* <form>
           <label htmlFor="favorites">Add to favorites:</label>
           <input type="submit" value="♡" onChange={addFavorites}/>
