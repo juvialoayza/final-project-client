@@ -114,12 +114,6 @@ function Profile() {
       <Form.Label htmlFor="lastName">Last Name: </Form.Label>
       <input type="text" name="lastName" value={lastNameInput} onChange={handleLastNameChange}></input>
       <br />
-      {/* <Form.Label htmlFor="email">Email:</Form.Label>
-      <input type="email" name="email" value={emailInput} onChange={handleEmailChange}></input>
-      <br />
-      <Form.Label htmlFor="password">Password:</Form.Label>
-      <input type="text" name="password" onChange={handlePasswordChange}></input>
-      <br /> */}
       <Form.Label htmlFor="bioCreator">Biography: </Form.Label>
       <br />
       <textarea name="bioCreator" value={bioCreatorInput} rows="10" cols="40" onChange={handleBioCreatorChange}>Tell us about you</textarea>

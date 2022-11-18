@@ -42,15 +42,15 @@ function Home() {
         </div>
         <div className="cont-seccion">
           <div className="title-seccion">
-            <h2>Experiences</h2>
           </div>
           <div className="card-main">
+            <br />
+            <h2>Experiences</h2>
         <ExperienceList />
-              
             </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <h2>Choose a category</h2>
         <div>
           <Link to="">Art and Culture</Link>
@@ -70,7 +70,7 @@ function Home() {
         <div>
           <Link to="">Dark Tourist</Link>
         </div>
-      </div>
+      </div> */}
     </div>
 
   )

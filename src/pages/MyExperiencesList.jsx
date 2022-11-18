@@ -119,7 +119,7 @@ function MyExperiencesList() {
       </>
       {/* <Link to={`/experiences/${eachExperience._id}/edit}><button>Edit</button></Link> */}
 
-      <Button onClick={handleDelete}>Delete</Button>
+      {/* <Button onClick={handleDelete}>Delete</Button> */}
       </p>
         )
       })}

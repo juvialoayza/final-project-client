@@ -77,7 +77,7 @@ function Profile() {
 
       <Link to={"/profile/edit"}><Button>Edit</Button></Link>
       <Link to={"/profile/edit/new-experience"}><Button>Create Experience</Button></Link>
-      <Link to={"/profile/edit/my-experiences"}><Button>Manage your experiences</Button></Link>
+      <Link to={"/profile/edit/my-experiences"}><Button>My experiences</Button></Link>
       {/* <ProfileFavorites/> */}
    
     </div>

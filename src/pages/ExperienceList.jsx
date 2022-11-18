@@ -1,8 +1,10 @@
+import "../styles/home.css"
 import { useEffect } from "react"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import Navbar from "../components/Navbar"
 import { experienceListService } from "../services/experience.services"
+
 
 
 function ExperienceList() {
@@ -34,26 +36,26 @@ function ExperienceList() {
   }
 
   return (
-          <div className="items-experience-seccion">
-        {list.map((eachExperience) => {
-          return (
-            <p key={eachExperience._id}>
-              <div className="item-seccion">
-                <img className="img-item-seccion" src={eachExperience.photoExperience} alt="photo-experience"  />
-                <div className="name-experience-item-seccion">
-                  <Link to={`/experiences/${eachExperience._id}`}>
-                    <p>{eachExperience.name}</p>
-                  </Link>
-                  <p>{eachExperience.place}</p>
-                  <p><span className="bold">€{eachExperience.price}/ </span><span>person</span></p>
+    <div className="items-experience-seccion">
+      {list.map((eachExperience) => {
+        return (
+          <p key={eachExperience._id}>
+            <div className="item-seccion">
+              <img className="img-item-seccion" src={eachExperience.photoExperience} alt="photo-experience" width={150} />
+              <div className="name-experience-item-seccion">
+                <Link to={`/experiences/${eachExperience._id}`}>
+                  <p>{eachExperience.name}</p>
+                </Link>
+                <p>{eachExperience.place}</p>
+                <p><span className="bold">€{eachExperience.price}/ </span><span>person</span></p>
 
-                </div>
               </div>
-            </p>
-          )
-        })}
-        </div>
-      )
+            </div>
+          </p>
+        )
+      })}
+    </div>
+  )
 }
 
-      export default ExperienceList
+export default ExperienceList

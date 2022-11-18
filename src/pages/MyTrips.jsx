@@ -76,8 +76,8 @@ function MyTrips() {
             <p>{eachExperience.place}</p>
             <p>{eachExperience.description}</p>
             <p>Experience by: {eachExperience.creator.firstName} {eachExperience.creator.lastName}</p>
-            <Button onClick={handleDelete}>Delete</Button>
-            <Button onClick={handleUpdate}>Edit</Button>
+            {/* <Button onClick={handleDelete}>Delete</Button>
+            <Button onClick={handleUpdate}>Edit</Button> */}
           </p>
   )
 })}

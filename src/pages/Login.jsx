@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 import{ loginService} from "../services/auth.services"
 
@@ -48,9 +50,9 @@ function Login() {
   return (
     <div>
       <h1>Login</h1>
-      <form onSubmit={handleLogin}>
+      <Form onSubmit={handleLogin}>
 
-        <label>Email:</label>
+        <Form.Label>Email:</Form.Label>
         <input
           type="email"
           name="email"
@@ -58,18 +60,18 @@ function Login() {
           onChange={handleEmailChange}
         />
 
-        <label>Password:</label>
+        <Form.Label>Password:</Form.Label>
         <input
           type="password"
           name="password"
           value={password}
           onChange={handlePasswordChange}
         />
-        <button type="submit">Login</button>
+        <Button type="submit">Login</Button>
 
         {errorMessage !== "" && <p>{errorMessage}</p>}
 
-      </form>
+      </Form>
     </div>
   );
 }
