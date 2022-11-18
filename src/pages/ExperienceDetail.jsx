@@ -1,15 +1,16 @@
 import React from 'react'
+import "../styles/home.css"
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import axios from "axios"
-import {experienceDetailsService, experienceToFavoritesService} from "../services/experience.services"
+import { experienceDetailsService, experienceToFavoritesService } from "../services/experience.services"
 
 function ExperienceDetail() {
   const [experienceInfo, setExperienceInfo] = useState(null)
   const [addToFavorites, setAddToFavorites] = useState([])
   const [isFetching, setIsFetching] = useState(true)
   // console.log(experienceInfo)
-  const {experienceId} = useParams()
+  const { experienceId } = useParams()
 
   useEffect(() => {
     getInfoExperience()
@@ -21,10 +22,10 @@ function ExperienceDetail() {
       console.log(response)
       setExperienceInfo(response.data)
       setIsFetching(false)
-    } catch(error) {
+    } catch (error) {
       console.log(error)
     }
- 
+
   }
 
   if (isFetching === true) {
@@ -33,34 +34,33 @@ function ExperienceDetail() {
 
   const addFavorites = async (event) => {
     try {
-     const addFavoritesToUser = await experienceToFavoritesService()
-     console.log(addFavoritesToUser)
-     setAddToFavorites(addFavoritesToUser)
-    }catch(error) {
+      const addFavoritesToUser = await experienceToFavoritesService()
+      console.log(addFavoritesToUser)
+      setAddToFavorites(addFavoritesToUser)
+    } catch (error) {
       console.log(error)
     }
   }
-  
+
   return (
     <div>
-         <div className="card-main">
-         <img className="card-photo" src={experienceInfo.photoExperience} alt="photoExperience" width={250} />
-              <div className="card-desc">
-                <p>Category: {experienceInfo.category}</p>
-                <p className="card-title">{experienceInfo.name}</p>
-                <p>Created by: {experienceInfo.creator.firstName} {experienceInfo.creator.lastName}</p>
-                <p>{experienceInfo.duration}</p>
-                <p className="card-price"><span className="bold">€{experienceInfo.price}/ </span><span>person</span></p>
-                <p>{experienceInfo.description}</p>
+      <div className="card-main">
+        <img className="card-photo" src={experienceInfo.photoExperience} alt="photoExperience" width={250} />
+        <div className="card-desc">
+          <p className="card-title">{experienceInfo.name}</p>
+          <p>Created by: {experienceInfo.creator.firstName} {experienceInfo.creator.lastName}</p>
+          <p>{experienceInfo.duration}</p>
+          <p className="card-price"><span className="bold">€{experienceInfo.price}/ </span><span>person</span></p>
+          <p>{experienceInfo.description}</p>
           <button onClick={addFavorites}>Add to favorites ♡</button>
           {/* <form>
           <label htmlFor="favorites">Add to favorites:</label>
           <input type="submit" value="♡" onChange={addFavorites}/>
           </form> */}
-         </div>
-         </div>
-         </div>
-    
+        </div>
+      </div>
+    </div>
+
   )
 }
 

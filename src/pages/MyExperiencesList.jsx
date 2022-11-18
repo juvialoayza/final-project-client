@@ -1,9 +1,10 @@
-// import React from 'react'
-// import {experiencesByCategory} from "../services/experience.services"
-// import { useEffect, useState } from "react"
-// import {useNavigate, useParams, Link} from "react-router-dom"
-// import {deleteExperienceService, updateExperienceService} from "../services/experience.services"
-// import {uploadImageService} from "../services/upload.services"
+import React from 'react'
+import Button from 'react-bootstrap/Button';
+import {showUserExperiences} from "../services/profile.services"
+import { useEffect, useState } from "react"
+import {useNavigate, useParams, Link} from "react-router-dom"
+import {deleteExperienceService, updateExperienceService} from "../services/experience.services"
+import {uploadImageService} from "../services/upload.services"
 
 
 // function MyExperiencesList() {
@@ -108,6 +109,7 @@
 //   return (
 //     <div>
       
+<<<<<<< HEAD
 //          {experiences.map((eachExperience) => {
 //         return (
 //           <p key={eachExperience._id}>
@@ -124,5 +126,23 @@
 //     </div>
 //   )
 // }
+=======
+         {experiences.map((eachExperience) => {
+        return (
+          <p key={eachExperience._id}>
+      <><h3>{eachExperience.name} </h3>
+      <img src={eachExperience.photoExperience} alt="photo-experience" width={90} />
+      <p>{eachExperience.place}</p>
+      </>
+      {/* <Link to={`/experiences/${eachExperience._id}/edit}><button>Edit</button></Link> */}
+
+      {/* <Button onClick={handleDelete}>Delete</Button> */}
+      </p>
+        )
+      })}
+    </div>
+  )
+}
+>>>>>>> 7ff832c65b2824eb2d791183bf88c0818f9edadd
 
 // export default MyExperiencesList

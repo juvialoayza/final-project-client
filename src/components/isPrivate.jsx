@@ -2,7 +2,7 @@ import { useContext } from "react"
 import {AuthContext} from "../context/auth.context"
 import {Navigate, useNavigate} from "react-router-dom"
 
-function isPrivate(props) {    
+function IsPrivate(props) {    
 
     const {isLoggedIn} = useContext(AuthContext)
 
@@ -13,4 +13,4 @@ function isPrivate(props) {
     }
 }
 
-export default isPrivate
+export default IsPrivate

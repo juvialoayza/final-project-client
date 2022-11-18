@@ -1,3 +1,5 @@
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import {useEffect} from 'react'
 import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -74,11 +76,11 @@ function ItineraryCreate() {
   return (
     <div>
         <h3>Plan your next trip</h3>
-        <form>
-            <label htmlFor="name">Name your trip:</label>
+        <Form>
+            <Form.Label htmlFor="name">Name your trip:</Form.Label>
             <input type="text" name="name" value={nameInput} onChange={handleNameChange} />
             <br />
-            <label htmlfor="place">Where are you going?</label>
+            <Form.Label htmlfor="place">Where are you going?</Form.Label>
             <select name="place" onChange={handlePlaceChange}>
             <option value="">Choose a place</option>
             {allPlaces.map((eachPlace) => {
@@ -90,8 +92,13 @@ return (
 </select>
   
     <br />
+<<<<<<< HEAD
     <label htmlfor="experience">Choose your experience</label>
             <select name="experience"  onChange={handleExperienceChange}>
+=======
+    <Form.Label htmlfor="experience">Choose your experience</Form.Label>
+            <select name="experience" onChange={handleExperienceChange}>
+>>>>>>> 7ff832c65b2824eb2d791183bf88c0818f9edadd
             <option value="">Choose one</option>
 
 {allExperiences.filter(eachExperience => eachExperience.place === placeInput).map(eachPlace => (
@@ -113,11 +120,11 @@ return (
 
 
 <br />
-            <label htmlFor="date">Date:</label>
+            <Form.Label htmlFor="date">Date:</Form.Label>
             <input type="text" name="date" value={dateInput} onChange={handleDateChange} />
             <br />
-            <button onClick={handleSubmit}>Create</button>
-        </form>
+            <Button onClick={handleSubmit}>Create</Button>
+        </Form>
     </div>
   )
 }

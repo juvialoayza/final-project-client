@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from "react"
 import { showMyItinerary } from "../services/profile.services"
 import { useNavigate, Link } from "react-router-dom"
@@ -70,16 +71,17 @@ function MyTrips() {
       {details.map((eachExperience) => {
         return (
           <p key={eachExperience._id}>
-      <><h3>{eachExperience.name} </h3>
-      {/* <img src={eachExperience.creator.photoExperience} alt="photo-experience" width={90} /> */}
-      <p>{eachExperience.place}</p>
-      <p>Experience by: {eachExperience.creator.firstName} {eachExperience.creator.lastName}</p></>
-      </p>
-      
-        )
-      })}
-      
-    </div>
+            <img src={eachExperience.photoExperience} width={90} />
+            <h3>{eachExperience.name} </h3>
+            <p>{eachExperience.place}</p>
+            <p>{eachExperience.description}</p>
+            <p>Experience by: {eachExperience.creator.firstName} {eachExperience.creator.lastName}</p>
+            {/* <Button onClick={handleDelete}>Delete</Button>
+            <Button onClick={handleUpdate}>Edit</Button> */}
+          </p>
+  )
+})}
+    </div >
   )
 }
 

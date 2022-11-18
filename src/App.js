@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Routes, Route} from "react-router-dom";
+
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Home from './pages/Home';
@@ -12,13 +14,12 @@ import ProfileEdit from './pages/ProfileEdit';
 import ExperienceCreate from './pages/ExperienceCreate';
 import ExperienceList from './pages/ExperienceList';
 import ExperienceDetail from './pages/ExperienceDetail';
-import PlacesList from './pages/PlacesList';
 import AddItinerary from './components/AddItinerary'
 import MyExperiencesList from './pages/MyExperiencesList';
 import ExperienceFavorites from './components/ExperienceFavorites';
 import MyTrips from './pages/MyTrips';
 import MyExperiencesEdit from './pages/MyExperiencesEdit'
-import ExperienceListCategory from './pages/ExperienceListCategory';
+import IsPrivate from './components/IsPrivate';
 
 function App() {
   return (
@@ -32,11 +33,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<ProfileDetails/>} />
         <Route path="/profile/edit" element={<ProfileEdit/>} />
-        <Route path="/profile/edit/new-experience" element={<ExperienceCreate/>} />
+        <Route path="/profile/edit/new-experience" element={<IsPrivate><ExperienceCreate/></IsPrivate>} />
         <Route path="/experiences" element={<ExperienceList/>}/>
         <Route path="/experiences/:experienceId" element={<ExperienceDetail/>}/>
-        {/* <Route path="/experiences/:experienceId/edit" element={<MyExperiencesEdit/>}/> */}
-        <Route path="/experiences/placesList" element={<PlacesList/>}/>
+        <Route path="/experiences/:experienceId/edit" element={<IsPrivate><MyExperiencesEdit/></IsPrivate>}/>
         <Route path="/my-itinerary" element={<AddItinerary/>}/>
         <Route path="/profile/edit/my-experiences" element={<MyExperiencesList/>}/>
         <Route path="/profile/my-favorites" element={<ExperienceFavorites/>}/>

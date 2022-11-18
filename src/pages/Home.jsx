@@ -10,6 +10,7 @@ import imgExpFood from "../assets/experience_food.jpg"
 // import {useState} from "react"
 // import {experiencesByCategory} from "../services/experience.services"
 
+
 function Home() {
 
 
@@ -45,17 +46,36 @@ function Home() {
         </div>
         <div className="cont-seccion">
           <div className="title-seccion">
-            <h2>Experiences</h2>
           </div>
           <div className="card-main">
+            <br />
+            <h2>Experiences</h2>
         <ExperienceList />
-              
             </div>
         </div>
       </div>
-    
-      </div>
-   
+      {/* <div>
+        <h2>Choose a category</h2>
+        <div>
+          <Link to="">Art and Culture</Link>
+        </div>
+        <div>
+          <Link to="">Food</Link>
+        </div>
+        <div>
+          <Link to="">Photography</Link>
+        </div>
+        <div>
+          <Link to="">Adventure</Link>
+        </div>
+        <div>
+          <Link to="">Entertainment</Link>
+        </div>
+        <div>
+          <Link to="">Dark Tourist</Link>
+        </div>
+      </div> */}
+    </div>
 
   )
 }

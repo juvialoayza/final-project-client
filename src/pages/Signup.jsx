@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signupService } from "../services/auth.services"
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 function Signup() {
 
@@ -42,32 +46,41 @@ function Signup() {
   };
 
   return (
-    <div>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSignup}>
-        <label>Name:</label>
+    <div style={{ display: 'block', 
+                  width: 700, 
+                  padding: 30 }}>
+      <h4>Sign Up</h4>
+      <Form onSubmit={handleSignup}>
+    
+      <Form.Group>
+        <Form.Label>Name:</Form.Label>
         <input
           type="firstName"
           name="firstName"
           value={firstName}
           onChange={handleFirstNameChange}
         />
+        </Form.Group>
+        <Form.Group>
 
-        <label>Last Name:</label>
+        <Form.Label>Last Name:</Form.Label>
         <input
           type="lastName"
           name="lastName"
           value={lastName}
           onChange={handleLastNameChange}
-        />
-
-        <label>Email:</label>
+          />
+          </Form.Group>
+          <Form.Group>
+        <Form.Label>Email:</Form.Label>
         <input
           type="email"
           name="email"
           value={email}
           onChange={handleEmailChange}
         />
+        </Form.Group>
+        <Form.Group>
 
         <label>Password:</label>
         <input
@@ -75,12 +88,13 @@ function Signup() {
           name="password"
           value={password}
           onChange={handlePasswordChange}
-        />
-        <button type="submit">Sign up</button>
+          />
+          </Form.Group>
+        <Button variant="primary" type="submit">Sign up</Button>
 
         {errorMessage !== "" && <p>{errorMessage}</p>}
 
-      </form>
+      </Form>
     </div>
   );
 }
