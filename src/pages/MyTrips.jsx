@@ -40,6 +40,7 @@ function MyTrips() {
       <p>{eachExperience.place}</p>
       <p>Experience by: {eachExperience.creator.firstName} {eachExperience.creator.lastName}</p></>
       </p>
+      
         )
       })}
       

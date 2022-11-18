@@ -7,8 +7,12 @@ import imgBarcelona from "../assets/barcelona.png"
 import imgValencia from "../assets/valencia.png"
 import imgExpFood from "../assets/experience_food.jpg"
 import "../styles/home.css"
+import {useState} from "react"
+import {experiencesByCategory} from "../services/experience.services"
 
 function Home() {
+
+
   return (
     <div className="cont-img-header">
       <img src={imgHeader} alt="experience" width="100%" />
@@ -49,28 +53,9 @@ function Home() {
             </div>
         </div>
       </div>
-      <div>
-        <h2>Choose a category</h2>
-        <div>
-          <Link to="">Art and Culture</Link>
-        </div>
-        <div>
-          <Link to="">Food</Link>
-        </div>
-        <div>
-          <Link to="">Photography</Link>
-        </div>
-        <div>
-          <Link to="">Adventure</Link>
-        </div>
-        <div>
-          <Link to="">Entertainment</Link>
-        </div>
-        <div>
-          <Link to="">Dark Tourist</Link>
-        </div>
+    
       </div>
-    </div>
+   
 
   )
 }

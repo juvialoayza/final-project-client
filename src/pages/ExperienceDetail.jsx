@@ -46,6 +46,7 @@ function ExperienceDetail() {
          <div className="card-main">
          <img className="card-photo" src={experienceInfo.photoExperience} alt="photoExperience" width={250} />
               <div className="card-desc">
+                <p>Category: {experienceInfo.category}</p>
                 <p className="card-title">{experienceInfo.name}</p>
                 <p>Created by: {experienceInfo.creator.firstName} {experienceInfo.creator.lastName}</p>
                 <p>{experienceInfo.duration}</p>

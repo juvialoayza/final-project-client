@@ -1,24 +1,24 @@
 import React from 'react'
-import {showUserExperiences} from "../services/profile.services"
+import {experiencesByCategory} from "../services/experience.services"
 import { useEffect, useState } from "react"
-import {useNavigate} from "react-router-dom"
+import {useNavigate, useParams} from "react-router-dom"
 
 
 function MyExperiencesList() {
   const navigate = useNavigate()
-  
+  const {categoryName} = useParams()
 
   const [experiences, setExperiences] = useState([])
   const [isFetching, setIsFetching] = useState(true)
 
   useEffect(() => {
     getData()
-    }, [])
+    }, [categoryName])
 
     const getData = async (event) => {
     
       try {
-        const response = await showUserExperiences()
+        const response = await experiencesByCategory()
         console.log(response)
         setExperiences(response.data)
         setIsFetching(false)

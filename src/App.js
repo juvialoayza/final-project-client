@@ -17,6 +17,7 @@ import AddItinerary from './components/AddItinerary'
 import MyExperiencesList from './pages/MyExperiencesList';
 import ExperienceFavorites from './components/ExperienceFavorites';
 import MyTrips from './pages/MyTrips';
+import ExperienceListCategory from './pages/ExperienceListCategory';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/profile/edit/my-experiences" element={<MyExperiencesList/>}/>
         <Route path="/profile/my-favorites" element={<ExperienceFavorites/>}/>
         <Route path="/my-itinerary/list" element={<MyTrips/>}/>
+        <Route path='/experiences/:categoryName' element={<ExperienceListCategory/>}/>
 
         //páginas de errores
         <Route path="/error" element={<Error/>} />
