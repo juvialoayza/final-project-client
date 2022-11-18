@@ -1,14 +1,15 @@
 import React from 'react'
-import {experiencesByCategory} from "../services/experience.services"
+import {showUserExperiences} from "../services/profile.services"
 import { useEffect, useState } from "react"
-import {useNavigate, useParams, Link} from "react-router-dom"
+import {useNavigate, useParams} from "react-router-dom"
 import {deleteExperienceService, updateExperienceService} from "../services/experience.services"
 import {uploadImageService} from "../services/upload.services"
 
 
-function MyExperiencesList() {
+function MyExperiencesEdit() {
   const navigate = useNavigate()
-  const {categoryName} = useParams()
+  const {experienceId} = useParams
+  
 
   const [experiences, setExperiences] = useState([])
   const [isFetching, setIsFetching] = useState(true)
@@ -27,12 +28,12 @@ function MyExperiencesList() {
 
   useEffect(() => {
     getData()
-    }, [categoryName])
+    }, [])
 
     const getData = async (event) => {
     
       try {
-        const response = await experiencesByCategory()
+        const response = await showUserExperiences()
         console.log(response)
         setExperiences(response.data)
         setNameInput(response.data.name)
@@ -115,8 +116,7 @@ function MyExperiencesList() {
       <img src={eachExperience.photoExperience} alt="photo-experience" width={90} />
       <p>{eachExperience.place}</p>
       </>
-      <Link to={`/experiences/${eachExperience._id}/edit`}><button>Edit</button></Link>
-
+      <button></button>
       <button onClick={handleDelete}>Delete</button>
       </p>
         )
@@ -125,4 +125,4 @@ function MyExperiencesList() {
   )
 }
 
-export default MyExperiencesList
+export default MyExperiencesEdit

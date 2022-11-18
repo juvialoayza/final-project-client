@@ -17,7 +17,7 @@ import AddItinerary from './components/AddItinerary'
 import MyExperiencesList from './pages/MyExperiencesList';
 import ExperienceFavorites from './components/ExperienceFavorites';
 import MyTrips from './pages/MyTrips';
-import ExperienceListCategory from './pages/ExperienceListCategory';
+import MyExperiencesEdit from './pages/MyExperiencesEdit'
 
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
         <Route path="/profile/edit/new-experience" element={<ExperienceCreate/>} />
         <Route path="/experiences" element={<ExperienceList/>}/>
         <Route path="/experiences/:experienceId" element={<ExperienceDetail/>}/>
+        <Route path="/experiences/:experienceId/edit" element={<MyExperiencesEdit/>}/>
         <Route path="/experiences/placesList" element={<PlacesList/>}/>
         <Route path="/my-itinerary" element={<AddItinerary/>}/>
         <Route path="/profile/edit/my-experiences" element={<MyExperiencesList/>}/>

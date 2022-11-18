@@ -4,8 +4,8 @@ const createItineraryService = (newItinerary) => {
     return service.post("/itinerary", newItinerary)
 }
 
-const updateItineraryService = (itineraryId)=> {
-    return service.patch(`/itinerary/${itineraryId}`)
+const updateItineraryService = (itineraryId, updatedTrips)=> {
+    return service.patch(`/itinerary/${itineraryId}`, updatedTrips)
 }
 
 const deleteItineraryService = (itineraryId) => {
