@@ -3,6 +3,9 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import Navbar from "../components/Navbar"
 import { experienceListService } from "../services/experience.services"
+import { Button } from 'react-bootstrap';
+
+import Card from 'react-bootstrap/Card';
 
 
 function ExperienceList() {
@@ -56,5 +59,7 @@ function ExperienceList() {
     </div>
   )
 }
+
+
 
 export default ExperienceList

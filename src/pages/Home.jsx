@@ -6,9 +6,9 @@ import imgSevilla from "../assets/sevilla.jpg"
 import imgBarcelona from "../assets/barcelona.png"
 import imgValencia from "../assets/valencia.png"
 import imgExpFood from "../assets/experience_food.jpg"
-import "../styles/home.css"
-import {useState} from "react"
-import {experiencesByCategory} from "../services/experience.services"
+// import "../styles/home.css"
+// import {useState} from "react"
+// import {experiencesByCategory} from "../services/experience.services"
 
 function Home() {
 
