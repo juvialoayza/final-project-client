@@ -8,6 +8,7 @@ import imgValencia from "../assets/valencia.png"
 import imgExpFood from "../assets/experience_food.jpg"
 import "../styles/home.css"
 
+
 function Home() {
   return (
     <div className="cont-img-header">

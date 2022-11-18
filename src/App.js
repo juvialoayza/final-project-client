@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Routes, Route} from "react-router-dom";
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -12,7 +13,6 @@ import ProfileEdit from './pages/ProfileEdit';
 import ExperienceCreate from './pages/ExperienceCreate';
 import ExperienceList from './pages/ExperienceList';
 import ExperienceDetail from './pages/ExperienceDetail';
-import PlacesList from './pages/PlacesList';
 import AddItinerary from './components/AddItinerary'
 import MyExperiencesList from './pages/MyExperiencesList';
 import ExperienceFavorites from './components/ExperienceFavorites';
@@ -35,7 +35,6 @@ function App() {
         <Route path="/experiences" element={<ExperienceList/>}/>
         <Route path="/experiences/:experienceId" element={<ExperienceDetail/>}/>
         <Route path="/experiences/:experienceId/edit" element={<MyExperiencesEdit/>}/>
-        <Route path="/experiences/placesList" element={<PlacesList/>}/>
         <Route path="/my-itinerary" element={<AddItinerary/>}/>
         <Route path="/profile/edit/my-experiences" element={<MyExperiencesList/>}/>
         <Route path="/profile/my-favorites" element={<ExperienceFavorites/>}/>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button';
 import {showUserExperiences} from "../services/profile.services"
 import { useEffect, useState } from "react"
 import {useNavigate, useParams, Link} from "react-router-dom"
@@ -116,9 +117,9 @@ function MyExperiencesList() {
       <img src={eachExperience.photoExperience} alt="photo-experience" width={90} />
       <p>{eachExperience.place}</p>
       </>
-      <Link to={`/experiences/${eachExperience._id}/edit`}><button>Edit</button></Link>
+      {/* <Link to={`/experiences/${eachExperience._id}/edit}><button>Edit</button></Link> */}
 
-      <button onClick={handleDelete}>Delete</button>
+      <Button onClick={handleDelete}>Delete</Button>
       </p>
         )
       })}

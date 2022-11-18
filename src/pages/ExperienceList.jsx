@@ -34,27 +34,26 @@ function ExperienceList() {
   }
 
   return (
-    <div >
-      {list.map((eachExperience) => {
-        return (
-          <p key={eachExperience._id}>
-              <div className="card-main">
-                <img className="card-photo" src={eachExperience.photoExperience} alt="photo-experience" width={150} />
-                <div className="card-desc">
-            <Link to={`/experiences/${eachExperience._id}`}>
-                  <p className="card-title">{eachExperience.name}</p>
-                </Link>
-                <p className="card-place">{eachExperience.place}</p>
-                <p className="card-price"><span className="bold">€{eachExperience.price}/ </span><span>person</span></p>
-                
-              </div>
-            </div>
-          </p>
-        )
-      })}
+          <div className="items-experience-seccion">
+        {list.map((eachExperience) => {
+          return (
+            <p key={eachExperience._id}>
+              <div className="item-seccion">
+                <img className="img-item-seccion" src={eachExperience.photoExperience} alt="photo-experience"  />
+                <div className="name-experience-item-seccion">
+                  <Link to={`/experiences/${eachExperience._id}`}>
+                    <p>{eachExperience.name}</p>
+                  </Link>
+                  <p>{eachExperience.place}</p>
+                  <p><span className="bold">€{eachExperience.price}/ </span><span>person</span></p>
 
-    </div>
-  )
+                </div>
+              </div>
+            </p>
+          )
+        })}
+        </div>
+      )
 }
 
-export default ExperienceList
+      export default ExperienceList

@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button';
 import {showUserExperiences} from "../services/profile.services"
 import { useEffect, useState } from "react"
 import {useNavigate, useParams} from "react-router-dom"
@@ -116,8 +117,8 @@ function MyExperiencesEdit() {
       <img src={eachExperience.photoExperience} alt="photo-experience" width={90} />
       <p>{eachExperience.place}</p>
       </>
-      <button></button>
-      <button onClick={handleDelete}>Delete</button>
+      <Button onClick={handleUpdate}>Save</Button>
+      <Button onClick={handleDelete}>Delete</Button>
       </p>
         )
       })}

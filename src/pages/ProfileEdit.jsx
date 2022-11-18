@@ -1,3 +1,5 @@
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from "react"
 import { useNavigate, useParams, Link } from "react-router-dom"
 import { getProfileDetailsService, updateProfileService } from "../services/profile.services"
@@ -98,32 +100,32 @@ function Profile() {
   return (
     <div>
       <h3>👋 Hi {details.firstName} </h3>
-      <form>
+      <Form>
 
-      <label htmlFor="photoUser">Profile Picture: </label>
+      <Form.Label htmlFor="photoUser">Profile Picture: </Form.Label>
       <input type="file" name="photoUser" onChange={handleUploadImage}></input>
       <br />
       {isUploadingImage === true && <p>... loading content</p>}
       {photoUserInput !== "" ? <img src={photoUserInput} alt="image" width={200} /> : <p> Choose image </p>}
       <br />
-      <label htmlFor="firstName">Name: </label>
+      <Form.Label htmlFor="firstName">Name: </Form.Label>
       <input type="text" name="firstName" value={firstNameInput} onChange={handleFirstNameChange}></input>
       <br />
-      <label htmlFor="lastName">Last Name: </label>
+      <Form.Label htmlFor="lastName">Last Name: </Form.Label>
       <input type="text" name="lastName" value={lastNameInput} onChange={handleLastNameChange}></input>
       <br />
-      {/* <label htmlFor="email">Email:</label>
+      {/* <Form.Label htmlFor="email">Email:</Form.Label>
       <input type="email" name="email" value={emailInput} onChange={handleEmailChange}></input>
       <br />
-      <label htmlFor="password">Password:</label>
+      <Form.Label htmlFor="password">Password:</Form.Label>
       <input type="text" name="password" onChange={handlePasswordChange}></input>
       <br /> */}
-      <label htmlFor="bioCreator">Biography: </label>
+      <Form.Label htmlFor="bioCreator">Biography: </Form.Label>
       <br />
-      <textarea name="bioCreator" rows="10" cols="40" onChange={handleBioCreatorChange}>Tell us about you</textarea>
+      <textarea name="bioCreator" value={bioCreatorInput} rows="10" cols="40" onChange={handleBioCreatorChange}>Tell us about you</textarea>
       <br />
-      <button onClick={handleUpdate}>Save</button>
-      </form>
+      <Button onClick={handleUpdate}>Save</Button>
+      </Form>
      
     </div>
   )

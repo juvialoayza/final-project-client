@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from "react"
 import { showMyItinerary } from "../services/profile.services"
 import { useNavigate, Link } from "react-router-dom"
@@ -75,8 +76,8 @@ function MyTrips() {
             <p>{eachExperience.place}</p>
             <p>{eachExperience.description}</p>
             <p>Experience by: {eachExperience.creator.firstName} {eachExperience.creator.lastName}</p>
-            <button onClick={handleDelete}>Delete</button>
-            <button onClick={handleUpdate}>Edit</button>
+            <Button onClick={handleDelete}>Delete</Button>
+            <Button onClick={handleUpdate}>Edit</Button>
           </p>
   )
 })}

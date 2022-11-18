@@ -1,4 +1,6 @@
 import React from 'react'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -100,13 +102,13 @@ function ExperienceCreate() {
   }
 
   return (
-    <div>
+    <div className='new-experience-form'>
       <h3>Create new experience</h3>
       <form>
-        <label htmlFor="name">Experience Name:</label>
+        <Form.Label htmlFor="name">Experience Name:</Form.Label>
         <input type="text" name="name" value={nameInput} onChange={handleNameChange} />
         <br />
-        <label htmlfor="place">Place</label>
+        <Form.Label htmlfor="place">Place</Form.Label>
         <select name="place" onChange={handlePlaceChange}>
           <option value="">Choose a place</option>
           {allPlaces.map((eachPlace) => {
@@ -117,7 +119,7 @@ function ExperienceCreate() {
           })}
         </select>
         <br />
-        <label htmlfor="category">Category</label>
+        <Form.Label htmlfor="category">Category</Form.Label>
         <select name="category" onChange={handleCategoryChange}>
           <option value="">Choose a category</option>
           {allCategories.map((eachCategory) => {
@@ -128,24 +130,24 @@ function ExperienceCreate() {
           })}
         </select>
         <br />
-        <label htmlFor="description">Tell us about your experience:</label>
+        <Form.Label htmlFor="description">Tell us about your experience:</Form.Label>
         <input type="text" name="description" value={descriptionInput} onChange={handleDescriptionChange} />
         <br />
-        <label htmlFor="duration">Duration:</label>
+        <Form.Label htmlFor="duration">Duration:</Form.Label>
         <input type="text" name="duration" value={durationInput} onChange={handleDurationChange} />
         <br />
-        <label htmlFor="price">Price:</label>
+        <Form.Label htmlFor="price">Price:</Form.Label>
         <input type="text" name="price" value={priceInput} onChange={handlePriceChange} />
         <br />
-        <label htmlFor="date">Dates:</label>
+        <Form.Label htmlFor="date">Dates:</Form.Label>
         <input type="text" name="date" value={dateInput} onChange={handleDateChange} />
         <br />
-        <label htmlFor="photoExperience">Your images:</label>
+        <Form.Label htmlFor="photoExperience">Your images:</Form.Label>
         <input type="file" name="photoExperience" onChange={handleUploadImage} />
         <br />
         {isUploadingImage === true && <p>... loading content</p>}
         {photoExperienceInput !== "" ? <img src={photoExperienceInput} alt="image" width={200} /> : <p> Choose image </p>}
-        <button onClick={handleSubmit}>Create</button>
+        <Button onClick={handleSubmit}>Create</Button>
       </form>
     </div>
   )

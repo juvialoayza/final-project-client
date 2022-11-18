@@ -12,7 +12,7 @@ function Navbar() {
    
   }
   return (
-    <div>
+    <div >
              {isLoggedIn === true ? (
             <div className='items-menu'>
               <div className='item-menu'>
