@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar';
+import NavbarMenu from './components/NavbarMenu';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Routes, Route} from "react-router-dom";
 
@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar />
+      <NavbarMenu />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -41,7 +41,7 @@ function App() {
         <Route path="/profile/edit/my-experiences" element={<MyExperiencesList/>}/>
         <Route path="/profile/my-favorites" element={<ExperienceFavorites/>}/>
         <Route path="/my-itinerary/list" element={<MyTrips/>}/>
-        <Route path='/experiences/:categoryName' element={<ExperienceListCategory/>}/>
+        {/* <Route path='/experiences/:categoryName' element={<ExperienceListCategory/>}/> */}
 
         //páginas de errores
         <Route path="/error" element={<Error/>} />

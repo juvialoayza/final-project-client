@@ -92,13 +92,8 @@ return (
 </select>
   
     <br />
-<<<<<<< HEAD
-    <label htmlfor="experience">Choose your experience</label>
-            <select name="experience"  onChange={handleExperienceChange}>
-=======
     <Form.Label htmlfor="experience">Choose your experience</Form.Label>
             <select name="experience" onChange={handleExperienceChange}>
->>>>>>> 7ff832c65b2824eb2d791183bf88c0818f9edadd
             <option value="">Choose one</option>
 
 {allExperiences.filter(eachExperience => eachExperience.place === placeInput).map(eachPlace => (
