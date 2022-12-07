@@ -7,6 +7,7 @@ import {deleteExperienceService, updateExperienceService} from "../services/expe
 import {uploadImageService} from "../services/upload.services"
 
 
+
 function MyExperiencesList() {
   const navigate = useNavigate()
   const {categoryName} = useParams()
