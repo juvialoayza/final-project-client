@@ -6,29 +6,31 @@ import imgSevilla from "../assets/sevilla.jpg"
 import imgBarcelona from "../assets/barcelona.png"
 import imgValencia from "../assets/valencia.png"
 import imgExpFood from "../assets/experience_food.jpg"
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 // import "../styles/home.css"
 // import {useState} from "react"
 // import {experiencesByCategory} from "../services/experience.services"
 
 
 function Home() {
-  
 
 
   return (
     <div className="cont-img-header">
-        <div className="description-page">
+      <div className="description-page">
         <p>We will show you hidden gems and tell you stories that only a local would know, <b>in a different way!</b></p>
       </div>
-      <img src={imgHeader} alt="experience" width="95%" id="image-home"/>
-    
-
+      <div>
+      <img src={imgHeader} alt="experience" width="95%" id="image-home" />
+      </div>
       <div className="cont-seccion">
         <div className="title-seccion">
-          <h2>Featured places</h2>
+          <h3>Featured places</h3>
         </div>
         <div className="items-seccion">
-          <div >
+          <div>
             <img src={imgMadrid} alt="madrid-city" width="250px" className="img-item-seccion" />
             <div className="name-city-item-seccion">Madrid</div>
           </div>
@@ -52,8 +54,8 @@ function Home() {
           <div className="card-main">
             <br />
             <h2>Experiences</h2>
-        <ExperienceList />
-            </div>
+            <ExperienceList />
+          </div>
         </div>
       </div>
       {/* <div>
