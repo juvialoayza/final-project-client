@@ -2,8 +2,11 @@ import "../styles/home.css"
 import { useEffect } from "react"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import Navbar from "../components/Navbar"
+import Navbar from "../components/NavbarMenu"
 import { experienceListService } from "../services/experience.services"
+import { Button } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 
 
@@ -39,23 +42,24 @@ function ExperienceList() {
     <div className="items-experience-seccion">
       {list.map((eachExperience) => {
         return (
+          <Card style={{ width: '18rem' }}>
           <p key={eachExperience._id}>
-            <div className="item-seccion">
-              <img className="img-item-seccion" src={eachExperience.photoExperience} alt="photo-experience" width={150} />
-              <div className="name-experience-item-seccion">
-                <Link to={`/experiences/${eachExperience._id}`}>
+          <Card.Img variant="top" src={eachExperience.photoExperience} alt="photo-experience" />
+              <Card.Body>
+              <Card.Title><Link to={`/experiences/${eachExperience._id}`}>
                   <p>{eachExperience.name}</p>
-                </Link>
+                </Link></Card.Title>
                 <p>{eachExperience.place}</p>
                 <p><span className="bold">€{eachExperience.price}/ </span><span>person</span></p>
-
-              </div>
-            </div>
+              </Card.Body>
           </p>
+          </Card>
         )
       })}
     </div>
   )
 }
+
+
 
 export default ExperienceList

@@ -7,10 +7,10 @@ import {deleteExperienceService, updateExperienceService} from "../services/expe
 import {uploadImageService} from "../services/upload.services"
 
 
+
 function MyExperiencesList() {
   const navigate = useNavigate()
-  const {experienceId} = useParams
-  
+  const {categoryName} = useParams()
 
   const [experiences, setExperiences] = useState([])
   const [isFetching, setIsFetching] = useState(true)
@@ -29,12 +29,12 @@ function MyExperiencesList() {
 
   useEffect(() => {
     getData()
-    }, [])
+    }, [categoryName])
 
     const getData = async (event) => {
     
       try {
-        const response = await showUserExperiences()
+        const response = await experiencesByCategory()
         console.log(response)
         setExperiences(response.data)
         setNameInput(response.data.name)
