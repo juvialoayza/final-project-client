@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+![Imagen portada](./public/cabecera-wanderlust.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The web app that will make you live experiences around the world!
 
-## Available Scripts
+Welcome to the repository of this project made by Juvixa Loayza and Ranier Mujica as part of the full stack web development Bootcamp at Ironhack.
 
-In the project directory, you can run:
+## Applied technologies
 
-### `npm start`
+The web application is built with a server developed entirely with JavaScript, NodeJs, Express, MongoDB and Cloudinary. While we have worked with React, CSS and Bootstrap to develop views from the client.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### MVP
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Our MVP consists of an application where through token technology a user can register and access the web to view experiences around the world (in test phase only in Spain) and meet the creators of these experiences, book and add to their favourites. Similarly, by accessing the "Itinerary" area, users can organise their next trip and add the experiences of their choice.
 
-### `npm test`
+You can also log in as an administrator and upload your own experiences that you want to share with other travellers. Adding photos, itinerary and activities to do. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Improvements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The MVP presents the basic functions for logging in, browsing the experiences available in each city, visiting the details of each experience and adding to favourites. The option to create a new itinerary is also available. Aspects such as layout, itinerary editing and profile editing functions need to be improved. 
