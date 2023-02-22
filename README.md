@@ -1,4 +1,4 @@
-![Imagen portada](../final-project-client/src/assets/cabecera%20wanderlust.png)
+![Imagen portada](../final-project-client/src/assets/cabecera-wanderlust.png)
 
 # The web app that will make you live experiences around the world!
 
